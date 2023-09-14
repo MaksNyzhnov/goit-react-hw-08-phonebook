@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import css from './UserMenu.module.css';
 
-const UserMenu = () => {
+const AuthNav = () => {
   return (
     <nav className={css.headerLinks}>
       <NavLink className={css.headerLink} to="/login">
@@ -14,4 +14,4 @@ const UserMenu = () => {
   );
 };
 
-export default UserMenu;
+export default AuthNav;
