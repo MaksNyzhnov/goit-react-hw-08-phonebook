@@ -1,0 +1,9 @@
+.app_descr {
+  max-width: 700px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
