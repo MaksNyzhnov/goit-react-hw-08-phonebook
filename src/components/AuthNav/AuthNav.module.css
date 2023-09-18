@@ -1,12 +1,11 @@
 .headerLinks {
   display: flex;
   gap: 40px;
-  flex-grow: 1;
 }
 
 .headerLink {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
   text-decoration: none;
   color: #333;
 }

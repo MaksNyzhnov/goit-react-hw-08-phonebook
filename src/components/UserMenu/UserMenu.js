@@ -1,17 +1,23 @@
-import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import css from './UserMenu.module.css';
+import { getUsername } from 'redux/auth/auth-selectors';
+import { logout } from 'redux/auth/auth-operations';
 
-const AuthNav = () => {
+const UserMenu = () => {
+  const dispatch = useDispatch();
+  const name = useSelector(getUsername);
   return (
-    <nav className={css.headerLinks}>
-      <NavLink className={css.headerLink} to="/login">
-        Log in
-      </NavLink>
-      <NavLink className={css.headerLink} to="/register">
-        Sign up
-      </NavLink>
-    </nav>
+    <div className={css.user_menu}>
+      <p>{name}</p>
+      <button
+        onClick={() => {
+          dispatch(logout());
+        }}
+      >
+        Logout
+      </button>
+    </div>
   );
 };
 
-export default AuthNav;
+export default UserMenu;

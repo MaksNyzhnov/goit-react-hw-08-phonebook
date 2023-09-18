@@ -1,20 +1,27 @@
-.headerLinks {
+.user_menu {
+  margin-right: 24px;
+
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 20px;
 }
 
-.headerLink {
-  font-size: 24px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #333;
-}
+.user_menu > p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
 
-.headerLink:visited {
-  color: #333;
+  margin-bottom: 0;
 }
+.user_menu > button {
+  padding: 5px 10px;
+  font-size: 16px;
 
-.headerLink.active {
-  color: rgb(222, 215, 215);
-  background-color: purple;
+  border-radius: 15px;
+
+  background-color: rgba(116, 115, 115, 0.3);
+}
+.user_menu > button:hover,
+.user_menu > button:active {
+  background-color: rgba(116, 115, 115, 0.5);
 }

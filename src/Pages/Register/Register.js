@@ -1,17 +1,10 @@
 import Section from 'components/Section/Section';
-import css from './Register.module.css';
+import RegisterForm from 'components/RegisterForm/RegisterForm';
 
 const Register = () => {
   return (
     <Section title="Sign up">
-      <h3>
-        lorem ipsum dolor sit amet, consectetur adiplorem ipsum dolor sit amet,
-        consectetur adip lorem ipsum dolor sit amet, consectetur adip lorem
-        ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet,
-        consectetur adip lorem ipsum dolor sit amet, consectetur adip lorem
-        ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet,
-        consectetur adip lorem ipsum dolor sit amet, consectetur adip
-      </h3>
+      <RegisterForm></RegisterForm>
     </Section>
   );
 };
