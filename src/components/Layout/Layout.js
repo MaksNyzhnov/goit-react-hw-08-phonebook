@@ -10,7 +10,7 @@ import { getIsLoggedIn } from 'redux/auth/auth-selectors';
 
 const Layout = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  console.log(isLoggedIn);
+
   return (
     <Container>
       <header className={css.header}>
