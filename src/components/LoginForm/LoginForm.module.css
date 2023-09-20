@@ -15,6 +15,7 @@
 }
 .login_form > button {
   padding: 5px;
+  margin-bottom: 16px;
   font-size: 16px;
   border-radius: 15px;
   background-color: rgba(116, 115, 115, 0.3);

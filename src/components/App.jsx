@@ -4,12 +4,15 @@ import { useDispatch } from "react-redux";
 import { fetchContacts } from "redux/operations";
 
 import { refreshCurrentUser } from "redux/auth/auth-operations";
+import PublicRoute from "./Routes/PublicRoute";
+import PrivateRoute from "./Routes/PrivateRoute";
 import Layout from "./Layout/Layout";
-import Home from "Pages/Home/Home";
-import Contacts from "Pages/Contacts/Contacts";
-import Login from "Pages/Login/Login";
-import Register from "Pages/Register/Register";
 
+
+const Home = lazy(() => import('../Pages/Home/Home'));
+const Contacts = lazy(() => import('../Pages/Contacts/Contacts'));
+const Login = lazy(() => import('../Pages/Login/Login'));
+const Register = lazy(() => import('../Pages/Register/Register'));
 const App = () => {
   const dispatch = useDispatch()
   
@@ -21,17 +24,23 @@ const App = () => {
     return (
       <Suspense fallback={<h2>Loading...</h2>}>
         <Routes>
-          <Route path='/' element={<Layout/>}>
-          <Route index element={<Home />} />
-          
-          <Route path='contacts' element={<Contacts/>}></Route>
-            <Route path='login' element={<Login />}></Route>
-            <Route path='register' element={<Register/>}></Route>
-             
-          
+          <Route path='/' element={<Layout />}>
+          <Route element={<PublicRoute />}>
 
-          <Route path="*" element={<Home />} />
-        </Route>
+            
+              
+            <Route index element={<Home />} />
+            <Route path='login' element={<Login />}></Route>
+            <Route path='register' element={<Register />}></Route>
+              
+        
+
+          </Route>
+          <Route element={<PrivateRoute redirectTo={'/login'} />}>
+            <Route path='contacts' element={<Contacts />}></Route>
+          </Route>
+            <Route path="*" element={<Home />} />
+            </Route>
         </Routes>
       </Suspense>
       
@@ -39,6 +48,7 @@ const App = () => {
 
   }
 
+  
 
 
 export default App
