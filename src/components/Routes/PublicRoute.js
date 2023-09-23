@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
 
-const PublicRoute = ({ redirectTo = '/', restricted = false }) => {
+const PublicRoute = ({ redirectTo = '/contacts', restricted = false }) => {
   const { token } = useSelector(state => state.auth);
 
   const shouldRedirect = token && restricted;
