@@ -1,9 +1,9 @@
-import  { lazy, Suspense } from "react";
+import  {useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import { fetchContacts } from "redux/operations";
 
-// import { refreshCurrentUser } from "redux/auth/auth-operations";
+
+import { refreshCurrentUser } from "redux/auth/auth-operations";
 import PublicRoute from "./Routes/PublicRoute";
 import PrivateRoute from "./Routes/PrivateRoute";
 import Layout from "./Layout/Layout";
@@ -14,13 +14,11 @@ const Contacts = lazy(() => import('../Pages/Contacts/Contacts'));
 const Login = lazy(() => import('../Pages/Login/Login'));
 const Register = lazy(() => import('../Pages/Register/Register'));
 const App = () => {
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   
-//   useEffect(() => {
-//    dispatch(fetchContacts())
-//  }, [dispatch])
 
-//   useEffect(() => {dispatch(refreshCurrentUser())}, [dispatch])
+
+  useEffect(() => {dispatch(refreshCurrentUser())}, [dispatch])
     return (
       <Suspense fallback={<h2>Loading...</h2>}>
         <Routes>
