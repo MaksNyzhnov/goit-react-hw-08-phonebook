@@ -14,7 +14,7 @@ const Contacts = lazy(() => import('../Pages/Contacts/Contacts'));
 const Login = lazy(() => import('../Pages/Login/Login'));
 const Register = lazy(() => import('../Pages/Register/Register'));
 const App = () => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   
 //   useEffect(() => {
 //    dispatch(fetchContacts())
