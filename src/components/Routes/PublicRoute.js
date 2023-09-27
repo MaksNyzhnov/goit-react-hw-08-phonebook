@@ -3,7 +3,6 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 const PublicRoute = ({ redirectTo = '/contacts', restricted = false }) => {
   const { token } = useSelector(state => state.auth);
-  console.log(token);
   const shouldRedirect = token && restricted;
 
   return shouldRedirect ? (
